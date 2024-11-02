@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@angular/cli": "^18.2.11",
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "cli": "node scripts/new-app.sh",
+    "prettier": "prettier . --write"
+  }
+}
