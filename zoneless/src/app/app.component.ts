@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import {Component, ElementRef, signal, ViewChild} from "@angular/core";
 
 @Component({
     selector: "app-root",
