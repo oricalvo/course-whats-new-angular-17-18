@@ -1,3 +1,4 @@
 packages:
     - zone-recap
     - zoneless
+    - route-redirect
