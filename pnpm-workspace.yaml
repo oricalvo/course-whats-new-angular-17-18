@@ -1,4 +1,14 @@
 packages:
-    - zone-recap
-    - zoneless
-    - route-redirect
+    - 02-zoneless
+    - 03-route-redirect
+    - 04-router-vs-app-service
+    - 06-signal-input-basic
+    - 05-reactive-internal-state
+    - 00-starter
+    - 07-signal-input-complex
+    - 08-lazy-loading-router
+    - 09-defer
+    - 10-ng-content
+    - 11-angular16-ng-content
+    - 12-ng-content-with-default
+    - 13-reactive-form
