@@ -1,0 +1,33 @@
+<h1>Home</h1>
+
+<form [formGroup]="myForm" #form="ngForm">
+    <div class="field">
+        <label for="name">Name: </label>
+        <input id="name" type="text" formControlName="name">
+        <div
+            *ngIf="(name.dirty || form.submitted) && name.hasError('required')">Name is required
+        </div>
+    </div>
+
+    <div class="field">
+        <label for="email">E-Mail: </label>
+        <input id="email" type="text" formControlName="email">
+        <div
+            *ngIf="(email.dirty || form.submitted) && email.hasError('required')">E-Mail is required
+        </div>
+    </div>
+
+    <div class="group" formGroupName="more">
+        <div class="field">
+            <label for="city">City: </label>
+            <input id="city" type="text" formControlName="city">
+        </div>
+
+        <div class="field">
+            <label for="street">E-Mail: </label>
+            <input id="street" type="text" formControlName="street">
+        </div>
+    </div>
+
+    <button type="submit">Save</button>
+</form>

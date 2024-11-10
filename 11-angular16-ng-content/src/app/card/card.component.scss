@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  border: 1px black solid;
+  height: 10rem;
+  width: 10rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  height: 1.5rem;
+}

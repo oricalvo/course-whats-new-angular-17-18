@@ -1,0 +1,15 @@
+<h1>Home</h1>
+
+<button (click)="toggleAdvancedView()">Load Advanced View</button>
+
+@defer (prefetch on timer(2500)) {
+    <app-advanced></app-advanced>
+} @placeholder (minimum 1000) {
+    Not Loaded
+} @loading (minimum 1000) {
+    Loading
+} @error {
+    Error
+}
+
+
