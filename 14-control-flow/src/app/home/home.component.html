@@ -1,0 +1,21 @@
+<h1>Home</h1>
+
+@if(showBasic) {
+    <span>Basic</span>
+}
+@else if(showAdvanced) {
+    <span>Advanced</span>
+}
+@else {
+    <span>None</span>
+}
+
+<button (click)="refresh()">Refresh</button>
+
+<ul>
+    @for(counter of counters; track counter.id) {
+        <li>
+            <app-counter [counter]="counter"></app-counter>
+        </li>
+    }
+</ul>
