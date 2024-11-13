@@ -1,4 +1,8 @@
 packages:
+    - 00-starter
+    - 01a-the-what
+    - 01b-signals
+    - 01c-angularjs
     - 02-zoneless
     - 03-route-redirect
     - 04-router-vs-app-service
@@ -13,3 +17,8 @@ packages:
     - 12-ng-content-with-default
     - 13-reactive-form
     - 14-control-flow
+    - 15-vite
+    - 16-esbuild
+    - 17-angular16-esm
+    - 18-migration
+    - 19-hmr

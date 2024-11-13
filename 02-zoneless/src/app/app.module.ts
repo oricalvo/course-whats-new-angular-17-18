@@ -10,7 +10,6 @@ import { provideMyChangeDetectionScheduler, provideTickLogging } from "./provide
     providers: [
         provideTickLogging(),
         // provideExperimentalZonelessChangeDetection(),
-        // provideMyChangeDetectionScheduler(),
     ],
     bootstrap: [AppComponent],
 })

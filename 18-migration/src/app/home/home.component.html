@@ -1,0 +1,15 @@
+<h1>Home</h1>
+
+<div>
+    <button (click)="toggle()">Toggle</button>
+    @if (showMessage) {
+        <span>
+    Conditional Message
+  </span>
+    }
+</div>
+
+<div>
+    <button (click)="inc()">Inc</button>
+    <span>{{counter}}</span>
+</div>

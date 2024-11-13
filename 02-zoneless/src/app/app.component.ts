@@ -1,4 +1,4 @@
-import {Component, ElementRef, signal, ViewChild} from "@angular/core";
+import {ChangeDetectorRef, Component, ElementRef, signal, ViewChild} from "@angular/core";
 
 @Component({
     selector: "app-root",
@@ -15,9 +15,13 @@ export class AppComponent {
 
     counter = 0;
 
+    constructor(private cdr: ChangeDetectorRef) {
+    }
+
     ngAfterViewInit() {
         this.mySpan.nativeElement.addEventListener("click", () => {
             this.counter++;
+            // this.cdr.markForCheck();
         });
     }
 
@@ -28,6 +32,7 @@ export class AppComponent {
     reset() {
         setTimeout(()=> {
             this.counter = 0;
+            // this.cdr.markForCheck();
         }, 0);
     }
 }

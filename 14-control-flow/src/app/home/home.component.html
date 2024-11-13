@@ -13,9 +13,12 @@
 <button (click)="refresh()">Refresh</button>
 
 <ul>
-    @for(counter of counters; track counter.id) {
-        <li>
+    @for(counter of counters; track $index) {
+        <li [ngClass]="{first: $first, last: $last}">
             <app-counter [counter]="counter"></app-counter>
         </li>
+    }
+    @empty {
+        No counters
     }
 </ul>
