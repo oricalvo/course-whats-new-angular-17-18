@@ -1,9 +1,9 @@
-import {ChangeDetectorRef, Component, ElementRef, signal, ViewChild} from "@angular/core";
+import {ChangeDetectorRef, Component, ElementRef, ViewChild, signal} from "@angular/core";
 
 @Component({
     selector: "app-root",
     template: `
-        <div>{{ counter }}</div>
+        <div>{{ counter().value }}</div>
         <button (click)="inc()">Inc</button>
         <button #nonAngularButton>Inc (addEventListener)</button>
         <button (click)="reset()">Reset (setTimeout)</button>
@@ -11,28 +11,42 @@ import {ChangeDetectorRef, Component, ElementRef, signal, ViewChild} from "@angu
     styles: [],
 })
 export class AppComponent {
-    @ViewChild("nonAngularButton", { static: true }) mySpan!: ElementRef<HTMLButtonElement>;
+    @ViewChild("nonAngularButton", {static: true}) mySpan!: ElementRef<HTMLButtonElement>;
 
-    counter = 0;
+    counterRaw = {
+        value :0
+    };
+
+    counter = signal(this.counterRaw);
 
     constructor(private cdr: ChangeDetectorRef) {
     }
 
     ngAfterViewInit() {
-        this.mySpan.nativeElement.addEventListener("click", () => {
-            this.counter++;
-            // this.cdr.markForCheck();
-        });
+        // this.mySpan.nativeElement.addEventListener("click", () => {
+        //     this.counter++;
+        //     // this.cdr.markForCheck();
+        // });
     }
 
-    inc() {
-        this.counter++;
+    async inc() {
+        setTimeout(()=> {
+            this.counterRaw.value++;
+            console.log("XXX");
+            this.counter.set(this.counterRaw);
+            // this.counter.update(c => ({value: c.value + 1}));
+        }, 100);
+
+        // this.counter.update(v => v+1);
+        // this.counter++;
+        // this.cdr.markForCheck();
     }
 
     reset() {
-        setTimeout(()=> {
-            this.counter = 0;
-            // this.cdr.markForCheck();
-        }, 0);
+        // setTimeout(() => {
+        //     this.counter = 0;
+        //     // this.cdr.markForCheck();
+        // }, 0);
     }
 }
+

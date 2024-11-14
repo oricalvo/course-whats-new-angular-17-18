@@ -15,14 +15,15 @@ export const routes: Routes = [
     },
     {
         path: "**",
-        redirectTo: () => {
-            const service = inject(AuthService);
-            if(service.isLoggedIn) {
-                return "/home";
-            }
-            else {
-                return "/login";
-            }
-        },
+        redirectTo: "/home",
+        // redirectTo: () => {
+        //     const service = inject(AuthService);
+        //     if(service.isLoggedIn) {
+        //         return "/home";
+        //     }
+        //     else {
+        //         return "/login";
+        //     }
+        // },
     },
 ];

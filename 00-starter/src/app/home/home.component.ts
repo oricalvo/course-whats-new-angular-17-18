@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, computed, signal} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +8,26 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+    counter = signal<CounterOptions>({
+        value: 0
+    });
 
+    inc() {
+        // this.counter().value++;
+
+        // this.counter.set(this.counter());
+
+        this.counter.update(c => {
+            c.value++;
+            return c;
+        });
+    }
+}
+
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+interface CounterOptions {
+    value: number;
 }

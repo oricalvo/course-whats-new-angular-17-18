@@ -8,7 +8,8 @@ import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
     styleUrl: "./counter.component.scss",
 })
 export class CounterComponent implements OnChanges {
-    @Input({ required: true }) value!: number;
+    value = signal(0);
+    message = computed(()=>"Hello user, counter is " + this.value());
 
     //
     //  This is an internal state

@@ -4,32 +4,22 @@ import { AppComponent } from './app/app.component';
 import {computed, effect, runInInjectionContext, signal} from '@angular/core';
 
 function playWithSignals() {
-    //
     //  Create
-    //
     const num = signal(0);
 
-    //
     //  Update
-    //
     num.update(v => ++v);
     num.set(12);
 
-    //
     //  Read
-    //
     console.log("Reading: " + num());
 
-    //
     //  Monitor
-    //
     effect(()=> {
         console.log(message());
     });
 
-    //
     //  Reactivity
-    //
     const message = computed(()=> {
         return "Current value is: " + num();
     });

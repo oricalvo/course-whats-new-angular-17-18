@@ -2,11 +2,11 @@
 
 <button (click)="toggleAdvancedView()">Load Advanced View</button>
 
-@defer (prefetch on timer(2500)) {
+@defer (when isAdvancedViewVisible) {
     <app-advanced></app-advanced>
-} @placeholder (minimum 1000) {
+} @placeholder {
     Not Loaded
-} @loading (minimum 1000) {
+} @loading {
     Loading
 } @error {
     Error

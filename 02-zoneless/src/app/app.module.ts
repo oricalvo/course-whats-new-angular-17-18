@@ -9,7 +9,7 @@ import { provideMyChangeDetectionScheduler, provideTickLogging } from "./provide
     imports: [BrowserModule],
     providers: [
         provideTickLogging(),
-        // provideExperimentalZonelessChangeDetection(),
+        provideExperimentalZonelessChangeDetection(),
     ],
     bootstrap: [AppComponent],
 })

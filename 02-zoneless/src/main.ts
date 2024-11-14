@@ -8,7 +8,7 @@ console.log("After loading Zone.js:", window.setTimeout);
 async function main() {
     try {
         await platformBrowserDynamic().bootstrapModule(AppModule, {
-            // ngZone: "noop"
+            ngZone: "noop"
         });
     }
     catch(err) {
